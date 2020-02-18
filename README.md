@@ -1,6 +1,6 @@
 # React Review
 
-Reference [Challenge](http://apollographql.com/docs/tutorial/introduction.html). 🚀
+Reference [Challenge](https://scotch.io/courses/10-react-challenges-beginner). 🚀
 
 ## Motivation
 
