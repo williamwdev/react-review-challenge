@@ -6,22 +6,22 @@ const DATA = [
     car: '🚘 Honda'
   },
   {
-    name: '😃 Chris',
+    name: '😃 Monica',
     location: '🏘️ Moon',
     car: '🚘 Tesla'
   },
   {
-    name: ' 😃 Rose',
+    name: ' 😃 Pancake',
     location: '🏘️ Venice',
     car: '🚘 Pagani'
   },
   {
-    name: '😃 Mike',
+    name: '😃 Ryan',
     location: '🏘️ Milan',
     car: '🚘 Rolls Royce'
   },
   {
-    name: '😃 Liz',
+    name: '😃 Luke',
     location: '🏘️ Beirut',
     car: '🚘 Mercedes'
   }
