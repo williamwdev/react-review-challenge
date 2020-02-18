@@ -1,5 +1,6 @@
 import React from 'react';
 import UserProfile from '../src/components/UserProfile/UserProfile';
+import List from '../src/components/List/List'
 import './App.css';
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <div className="App">
       {/* Show user data here */}
       <UserProfile/>
+      <List/>
     </div>
   );
 }
