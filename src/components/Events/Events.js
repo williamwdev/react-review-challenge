@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function Events(props) {
   const [input, setInput] = useState('');
 
-  if (input === 'open sesame') {
-    alert('You may pass!');
-  }
+  useEffect(() => {
+    if (input === 'open sesame') {
+      alert('you may pass');
+    }
+  }, [input]);
 
   return (
     <div className="event-container">
