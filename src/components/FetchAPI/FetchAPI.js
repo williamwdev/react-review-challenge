@@ -17,6 +17,11 @@ export default function FetchAPI(props) {
     setBooks(response.data);
   };
 
+  // NOTE: Not sure if this is best practice
+  const handleReset = () => {
+    setBooks([])
+  }
+
   const renderListOfBooks = books.map((book, index) => {
     const fixedDate = new Date(book.released).toDateString();
     const authors = book.authors.join(', ');
@@ -44,6 +49,14 @@ export default function FetchAPI(props) {
       <div>
         <button className="fetch-button" onClick={fetchData}>
           Fetch Data
+        </button>
+        <br />
+      </div>
+
+      {/* Reset data field */}
+      <div>
+        <button className="reset-button" onClick={handleReset}>
+          Reset
         </button>
         <br />
       </div>
