@@ -111,3 +111,32 @@ input:first-child {
 .calculator-container h2 {
   font-size: 80px;
 }
+
+/* movement container styling */
+.movement-container {
+  font-family: sans-serif;
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 300px;
+  background: #4478a8;
+  color: rgb(225, 250, 228);
+}
+
+.movement-container .box {
+  width: 150px;
+  height: 150px;
+  background: #dc5b39;
+  margin: 0 auto;
+  transform: translateY(300px);
+  transition: 0.3s cubic-bezier(0.56, 0.2, 0.46, 1.27) all;
+}
+
+.movement-container button {
+  margin-top: 40px;
+  padding: 20px 40px;
+  background: #049ad7;
+  color: rgb(225, 244, 252);
+  font-size: 40px;
+  border-radius: 10px;
+  border: none;
+}
