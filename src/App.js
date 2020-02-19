@@ -7,7 +7,7 @@ import Calculator from '../src/components/Calculator/Calculator';
 import Movement from '../src/components/Movement/Movement';
 import FetchAPI from '../src/components/FetchAPI/FetchAPI';
 import ParentComponent from './components/PassProps/PassProps';
-import './App.css';
+import './styles.css';
 
 function App() {
   return (
