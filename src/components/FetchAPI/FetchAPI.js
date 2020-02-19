@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 /** The Challenge: Fetch List from API
  * Fetch data from an API when the Fetch Data button is clicked
@@ -8,6 +9,11 @@ import React from 'react';
 export default function FetchAPI(props) {
   const apiURL = "https://www.anapioficeandfire.com/api/books?pageSize=30";
 
+  const fetchData = async() => {
+    const response = await axios.get(apiURL);
+    console.log(response.data);
+  }
+
   return (
     <div className="FetchAPI-container">
       <h1>Game of Thrones Books</h1>
@@ -15,12 +21,12 @@ export default function FetchAPI(props) {
 
       {/* Fetch data from API */}
       <div>
-        <button className="fetch-button">Fetch Data</button>
+        <button className="fetch-button" onClick={fetchData}>Fetch Data</button>
         <br />
       </div>
 
       {/* Display data from API */}
-      
+
 
       {/* Use JSX below for each book */}
       <div className="books">
@@ -36,6 +42,7 @@ export default function FetchAPI(props) {
           </div>
         </div>
       </div>
+
     </div>
   )
 }
