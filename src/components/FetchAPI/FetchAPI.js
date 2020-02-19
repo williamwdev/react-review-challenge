@@ -1,8 +1,13 @@
 import React from 'react';
 
+/** The Challenge: Fetch List from API
+ * Fetch data from an API when the Fetch Data button is clicked
+ * Render details from the data returned
+ */
+
 export default function FetchAPI(props) {
   const apiURL = "https://www.anapioficeandfire.com/api/books?pageSize=30";
-  
+
   return (
     <div className="FetchAPI-container">
       <h1>Game of Thrones Books</h1>
@@ -15,6 +20,7 @@ export default function FetchAPI(props) {
       </div>
 
       {/* Display data from API */}
+      
 
       {/* Use JSX below for each book */}
       <div className="books">
