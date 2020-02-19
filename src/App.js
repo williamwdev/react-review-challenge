@@ -5,11 +5,13 @@ import UserInput from '../src/components/UserInput/UserInput'
 import Events from '../src/components/Events/Events';
 import Calculator from '../src/components/Calculator/Calculator';
 import Movement from '../src/components/Movement/Movement';
+import FetchAPI from '../src/components/FetchAPI/FetchAPI';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
+      <FetchAPI/>
       <Movement/>
       <Calculator/>
       <Events/>

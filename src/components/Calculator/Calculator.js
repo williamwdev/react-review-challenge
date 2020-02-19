@@ -7,12 +7,18 @@ import React, { useState } from 'react';
  */
 
 export default function Calculator(props) {
-  const [number1, setNumber1] = useState();
-  const [number2, setNumber2] = useState();
+  const [number1, setNumber1] = useState(0);
+  const [number2, setNumber2] = useState(0);
   const [sum, setSum] = useState(number1 + number2);
 
   function calculateTotal() {
     setSum(number1 + number2);
+  }
+
+  function resetSum() {
+    setNumber1(0);
+    setNumber2(0);
+    setSum(0);
   }
 
   return (
@@ -35,6 +41,7 @@ export default function Calculator(props) {
       </div>
 
       <button onClick={calculateTotal}>Add Them!</button>
+      <button onClick={resetSum}>Reset</button>
 
       <h2>{sum}</h2>
     </div>
