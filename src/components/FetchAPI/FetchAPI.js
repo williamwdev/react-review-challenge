@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { render } from '@testing-library/react';
 
 /** The Challenge: Fetch List from API
  * Fetch data from an API when the Fetch Data button is clicked
@@ -31,10 +30,10 @@ export default function FetchAPI(props) {
         <h2>{book.name}</h2>
 
         <div className="details">
-          <p>👨: {authors}</p>
-          <p>📖: {book.numberOfPages}</p>
-          <p>🏘️: {book.country}</p>
-          <p>⏰: {fixedDate}</p>
+          <p><span role='img' aria-label='smiley-emoji'>👨</span>: {authors}</p>
+          <p><span role='img' aria-label='book-emoji'>📖</span>: {book.numberOfPages}</p>
+          <p><span role='img' aria-label='country-emoji'>🏘️</span>: {book.country}</p>
+          <p><span role='img' aria-label='clock-emoji'>⏰</span>: {fixedDate}</p>
         </div>
       </div>
     );
