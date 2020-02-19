@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
+import { render } from '@testing-library/react';
 
 /** The Challenge: Fetch List from API
  * Fetch data from an API when the Fetch Data button is clicked
@@ -7,12 +8,32 @@ import axios from 'axios';
  */
 
 export default function FetchAPI(props) {
-  const apiURL = "https://www.anapioficeandfire.com/api/books?pageSize=30";
+  const [books, setBooks] = useState([]);
 
-  const fetchData = async() => {
+  const apiURL = 'https://www.anapioficeandfire.com/api/books?pageSize=30';
+
+  const fetchData = async () => {
     const response = await axios.get(apiURL);
-    console.log(response.data);
-  }
+    setBooks(response.data);
+  };
+
+  const renderListOfBooks = books.map((book, index) => {
+    const fixedDate = new Date(book.released).toDateString();
+    const authors = book.authors.join(', ');
+    return (
+      <div className="book" key={index}>
+        <h3>Book {index + 1}</h3>
+        <h2>{book.name}</h2>
+
+        <div className="details">
+          <p>👨: {authors}</p>
+          <p>📖: {book.numberOfPages}</p>
+          <p>🏘️: {book.country}</p>
+          <p>⏰: {fixedDate}</p>
+        </div>
+      </div>
+    );
+  });
 
   return (
     <div className="FetchAPI-container">
@@ -21,28 +42,14 @@ export default function FetchAPI(props) {
 
       {/* Fetch data from API */}
       <div>
-        <button className="fetch-button" onClick={fetchData}>Fetch Data</button>
+        <button className="fetch-button" onClick={fetchData}>
+          Fetch Data
+        </button>
         <br />
       </div>
 
       {/* Display data from API */}
-
-
-      {/* Use JSX below for each book */}
-      <div className="books">
-        <div className="book">
-          <h3>Book Number</h3>
-          <h2>Book Name</h2>
-
-          <div className="details">
-            <p>👨: Author/Authors</p>
-            <p>📖: Number of pages</p>
-            <p>🏘️: Book Country</p>
-            <p>⏰: Release date</p>
-          </div>
-        </div>
-      </div>
-
+      <div className="books">{renderListOfBooks}</div>
     </div>
-  )
+  );
 }
