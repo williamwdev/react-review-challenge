@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 
 /** The Challenge: Fetch List from API
  * Fetch data from an API when the Fetch Data button is clicked
@@ -11,15 +11,26 @@ export default function FetchAPI(props) {
 
   const apiURL = 'https://www.anapioficeandfire.com/api/books?pageSize=30';
 
-  const fetchData = async () => {
-    const response = await axios.get(apiURL);
-    setBooks(response.data);
+  // NOTE: ===== using axios =====
+  // const fetchData = async () => {
+  //   const response = await axios.get(apiURL);
+  //   setBooks(response.data);
+  // };
+
+  // NOTE: ===== using built-in fetch method ======
+  const fetchBooks = () => {
+    fetch(apiURL)
+      .then(resp => resp.json())
+      .then(data => {
+        setBooks(data)
+        // console.log(data);
+      });
   };
 
   // NOTE: Not sure if this is best practice
   const handleReset = () => {
-    setBooks([])
-  }
+    setBooks([]);
+  };
 
   const renderListOfBooks = books.map((book, index) => {
     const fixedDate = new Date(book.released).toDateString();
@@ -30,10 +41,30 @@ export default function FetchAPI(props) {
         <h2>{book.name}</h2>
 
         <div className="details">
-          <p><span role='img' aria-label='smiley-emoji'>👨</span>: {authors}</p>
-          <p><span role='img' aria-label='book-emoji'>📖</span>: {book.numberOfPages}</p>
-          <p><span role='img' aria-label='country-emoji'>🏘️</span>: {book.country}</p>
-          <p><span role='img' aria-label='clock-emoji'>⏰</span>: {fixedDate}</p>
+          <p>
+            <span role="img" aria-label="smiley-emoji">
+              👨
+            </span>
+            : {authors}
+          </p>
+          <p>
+            <span role="img" aria-label="book-emoji">
+              📖
+            </span>
+            : {book.numberOfPages}
+          </p>
+          <p>
+            <span role="img" aria-label="country-emoji">
+              🏘️
+            </span>
+            : {book.country}
+          </p>
+          <p>
+            <span role="img" aria-label="clock-emoji">
+              ⏰
+            </span>
+            : {fixedDate}
+          </p>
         </div>
       </div>
     );
@@ -46,7 +77,7 @@ export default function FetchAPI(props) {
 
       {/* Fetch data from API */}
       <div>
-        <button className="fetch-button" onClick={fetchData}>
+        <button className="fetch-button" onClick={fetchBooks}>
           Fetch Data
         </button>
         <br />
