@@ -12,19 +12,30 @@ export default function Movement() {
   function moveBoxUp() {
     setYAxis(yAxis - 50);
   }
+  function moveBoxDown() {
+    setYAxis(yAxis + 50);
+  }
+
+  function resetPosition() {
+    setYAxis(300);
+  }
 
   return (
-    
     <div className="movement-container">
       <h1>Move the Box!</h1>
 
-      {/* handle the click event on this button */}
-      <button onClick={moveBoxUp}>👆 Move Up 👆</button>
+      {/* handle the click event on these buttons to move the box around*/}
+      <button onClick={moveBoxUp}>Move Up</button>
+      <button onClick={moveBoxDown}>Move Down</button>
+      <button onClick={resetPosition}>Reset</button>
 
       {/* move this box using inline styles */}
-      <div className="box" style={{
-        transform: `translateY(${yAxis}px)`
-      }} />
+      <div
+        className="box"
+        style={{
+          transform: `translateY(${yAxis}px)`
+        }}
+      />
     </div>
   );
 }
