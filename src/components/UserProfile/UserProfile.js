@@ -1,6 +1,12 @@
 import React from 'react';
 import Users from '../../STORE';
 
+/** The Challenge: Display Data using JSX
+ * Show data
+ * Bind data to an HTML attribute <img src=
+ * Create a link to the user's Twitter profile
+ */
+
 export default function UserProfile(props) {
   const url = `http://twitter.com/@${Users.twitterUsername}`;
 

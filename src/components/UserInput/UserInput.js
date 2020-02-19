@@ -1,5 +1,12 @@
 import React, { useState } from 'react';
 
+/** The Challenge: Update Data from Form Input
+ * Use an <input> field to accept text
+ * Update your UI based on that input field
+ * Use React state to automatically update your UI
+ * Update data using a form
+ */
+
 export default function UserInput(props) {
   // create state variables using useState react hooks
   const [name, setName] = useState('');

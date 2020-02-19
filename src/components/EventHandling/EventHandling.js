@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
+/** The Challenge: Show Alert when Typing
+ * Store form data in state
+ * Display alert if a particular word is entered into the form
+ */
+
 export default function Events(props) {
   const [input, setInput] = useState('');
 

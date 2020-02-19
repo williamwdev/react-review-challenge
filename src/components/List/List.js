@@ -1,9 +1,15 @@
 import React from 'react';
 import DATA from '../../DATA';
 
+/** The Challenge: Loop Over an Array
+ * Use the .map() method to render data
+ * Parse and display data in an array of objects
+ */
+
 export default function List(props) {
   const renderListOfUsers = DATA.map((user, index) => {
     return (
+      // Each card must have a 'key' attribute
       <div key={index}>
         <p>{user.name}</p>
         <p>{user.location}</p>
@@ -21,7 +27,6 @@ export default function List(props) {
       <div className="users">
         {renderListOfUsers}
         {/* Display each data in array in a card */}
-        {/* Each card must have a 'key' attribute */}
       </div>
     </>
   );
