@@ -6,7 +6,7 @@ import UserForm from "./UserForm";
 export default function Context() {
   return (
     <>
-      <div className="App">
+      <div className="context-container">
         <h2 className="is-size-4">
           We'll use the React Context API to pass and receive data in any
           component.
@@ -22,7 +22,6 @@ export default function Context() {
           <Name />
           <Location />
         </div>
-        <ScotchInfoBar />
       </div>
     </>
   );

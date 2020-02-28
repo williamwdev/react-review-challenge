@@ -250,3 +250,28 @@ input:first-child {
   margin: 20px;
   text-align: left;
 }
+
+/* context styling */
+.context-container {
+  font-family: sans-serif;
+  padding-left: 30px;
+  padding-right: 30px;
+  border: 1px solid black;
+  margin-bottom: 20px;
+}
+
+.input-item {
+  margin-top: 2%;
+}
+
+.input {
+  width: 50%;
+}
+
+.user-form {
+  background: #f2f2f2;
+  border-radius: 10px;
+  padding: 10px 20px 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
