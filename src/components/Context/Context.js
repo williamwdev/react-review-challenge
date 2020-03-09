@@ -5,7 +5,7 @@ import Location from './LocationComponent';
 
 export default function Context() {
   return (
-    <div className="App">
+    <div className="context-container">
       <h2 className="is-size-4">
         We'll use the React Context API to pass and receive data in any
         component.
