@@ -1,4 +1,7 @@
 import React from 'react';
+import UserForm from './UserForm';
+import Name from './NameComponent';
+import Location from './LocationComponent';
 
 export default function Context() {
   return (
